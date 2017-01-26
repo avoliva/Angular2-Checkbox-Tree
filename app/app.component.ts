@@ -104,7 +104,10 @@ export class AppComponent {
                         updateParent(parentNode);
                     }
                 }else{
-                    parentNode.partialSelection = true;
+                    while (parentNode) {
+                        parentNode.partialSelection = true;
+                        parentNode = parentNode.parent;
+                    }
                 }
             }
         }
